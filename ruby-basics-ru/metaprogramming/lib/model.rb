@@ -47,6 +47,8 @@ module Model
       DateTime.parse value
     when :boolean
       value == true
+    else
+      value
     end
   end
 end
