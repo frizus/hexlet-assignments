@@ -9,8 +9,12 @@ class Signature
 
   def call(env)
     # BEGIN
-    status, headers, response = @app.call(env)
-    response << Digest::SHA256.hexdigest(response.first)
+    prev_response = @app.call(env)
+    status, headers, response = prev_response
+
+    return prev_response if status != 200
+
+    response.push(Digest::SHA256.hexdigest(response.join))
     [status, headers, response]
     # END
   end
