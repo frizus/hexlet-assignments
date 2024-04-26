@@ -1,5 +1,4 @@
 setup:
-	bundle config set path 'vendor/bundle'
 	bin/setup
 
 start:
