@@ -1,0 +1,13 @@
+<h1><%= @task.name %></h1>
+
+<p><%= @task.description %></p>
+<p>
+  <%= @task.completed ? 'Выполнено' : 'Не выполнено' %>
+</p>
+<p>
+  <small>Статус: <%= @task.status %></small><br>
+  <small>Создал: <%= @task.creator %></small><br>
+  <small>Исполнитель: <%= @task.performer %></small><br>
+</p>
+
+<%= link_to 'Редактировать', edit_task_path(@task) %>

@@ -1,0 +1,41 @@
+<%= form_with model: @task do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %><br>
+    <%= @task.errors.full_messages_for(:name).join(' ') if @task.errors.present? %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %><br>
+    <%= @task.errors.full_messages_for(:description).join(' ') if @task.errors.present? %>
+  </div>
+
+  <div>
+    <%= form.label :status %><br>
+    <%= form.text_field :status %><br>
+    <%= @task.errors.full_messages_for(:status).join(' ') if @task.errors.present? %>
+  </div>
+
+  <div>
+    <%= form.label :creator %><br>
+    <%= form.text_field :creator %><br>
+    <%= @task.errors.full_messages_for(:creator).join(' ') if @task.errors.present? %>
+  </div>
+
+  <div>
+    <%= form.label :performer %><br>
+    <%= form.text_field :performer %><br>
+    <%= @task.errors.full_messages_for(:performer).join(' ') if @task.errors.present? %>
+  </div>
+
+  <div>
+    <%= form.label :completed %><br>
+    <%= form.check_box :completed %><br>
+    <%= @task.errors.full_messages_for(:completed).join(' ') if @task.errors.present? %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
