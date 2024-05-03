@@ -1,15 +1,17 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
   setup do
     @task = tasks(:one)
     @new_values = {
-      name: Faker::Lorem.words(number: rand(1..2)).join(" "),
+      name: Faker::Lorem.words(number: rand(1..2)).join(' '),
       description: Faker::Lorem.paragraphs(number: rand(2..3)).join("\n\n"),
-      status: %i(in_progress cancelled test done).sample,
+      status: %i[in_progress cancelled test done].sample,
       creator: Faker::Name.unique.name,
       performer: Faker::Name.unique.name,
-      completed: Faker::Boolean.boolean,
+      completed: Faker::Boolean.boolean
     }
   end
 

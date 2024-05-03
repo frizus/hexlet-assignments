@@ -13,6 +13,6 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
-    use_transactional_tests = true
+    true
   end
 end
