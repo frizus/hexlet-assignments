@@ -7,7 +7,6 @@ gem 'rails', '~> 7.1'
 
 # BEGIN
 gem 'slim-rails'
-gem 'html2slim'
 # END
 
 gem 'jbuilder'
@@ -47,6 +46,7 @@ end
 
 group :test do
   gem 'minitest-power_assert'
+  gem 'html2slim'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
