@@ -1,0 +1,8 @@
+h1 Tasks
+ul
+  li
+    = link_to 'Создать', new_task_path
+  - @tasks.each do |task|
+    li
+      = link_to task.name, task_path(task)
+      | статус #{task.status}, #{task.completed ? 'выполнено' : 'не выполнено'}
